@@ -66,14 +66,14 @@ export default function LotteryEntrance() {
 
 
     const handelSuccess = async function (tx) {
-        try{
+        try {
             await tx.wait(1)
             updateUI()
             handleNewNotification(tx)
-        }catch (error) {
+        } catch (error) {
             console.error(error)
         }
-       
+
     }
 
     const handleNewNotification = function () {
@@ -94,7 +94,9 @@ export default function LotteryEntrance() {
                 }} disabled={isLoading || isFetching}>{isLoading || isFetching ? <div className="animate-spin spiner-border h-8 w-8 border-b-2 rounded-full"></div> : <div>Enter Raffle</div>}</button>
                 Number of Players {numberPlayers}
                 Recent Winner: {recentWinner}
-                Entrance Fee: <div>{ethers.utils.formatUnits(entranceFee, "ether")} ETH</div></div>)
+                Entrance Fee: <div>{ethers.utils.formatUnits(entranceFee, "ether")} ETH</div>
+                <div>WHATS UPPP!</div>
+            </div>)
                 : (<div>No Raffle Address Detected</div>)}
 
         </div>
